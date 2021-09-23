@@ -1,0 +1,83 @@
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 55px 0;
+    height: 60px;
+    z-index: 21;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    overflow: hidden;
+    .header__content{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        height: 100%;
+        .header__line{
+            width: 15px;
+            height: 10px;
+            margin-right: 10px;
+            position: relative;
+            top: 3px;
+            .line{
+                height: 2px;
+                background-color: black;
+                position: absolute;
+                width: 100%;
+                transition: all .5s;
+                transform-origin: center;
+            }
+            .line:first-child{
+                width: 70%;
+            }
+            .line:last-child{
+                bottom: 0;
+            }
+        }
+        .header__text{
+            position: relative;
+            height: 100%;
+            overflow: hidden;
+            z-index: 15;
+            span{
+                font-weight: 500;
+                font-size: 20px;
+                position: absolute;
+                transition: all .5s;
+                opacity: 1;
+            }
+            span:first-child{
+                position: relative;
+                top: 0;
+            }
+            span:last-child{
+                top: 135%;
+                left: 0;
+            }
+            
+        }
+        &.text-active{
+            .header__line{
+                .line:first-child{
+                    width: 100%;
+                    transform: rotate(220deg) translate(-6px);
+                }
+                .line:last-child{
+                    transform: rotate(-224deg) translate(-6px);
+                }
+            }
+            .header__text{
+                span:first-child{
+                    top: -120%;
+                }
+                span:last-child{
+                    top: 0;
+                }
+            }
+        }
+    }
+    
+}

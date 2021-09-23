@@ -1,0 +1,73 @@
+@mixin button($fs) {
+    display: flex;
+    align-self: flex-end;
+    color: white;
+    font-size: $fs;
+    cursor: pointer;
+    &:hover {
+        div::after {
+            transform: scaleX(0.5);
+        }
+    }
+    a {
+        position: relative;
+        span:first-child {
+            display: block;
+        }
+        span:last-child {
+            display: block;
+            opacity: 0;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            border-radius: 50%;
+            background-color: hsla(0, 0%, 100%, 0.1);
+            transition: opacity 0.5s ease;
+            height: $fs + 40px;
+            width: $fs + 40px;
+            margin-left: -($fs + 40px)/2;
+            margin-top: -($fs + 40px)/2;
+            transition: opacity 0.5s ease;
+        }
+    }
+
+    div {
+        justify-self: flex-end;
+        position: relative;
+        margin-left: 32px;
+        width: 40px;
+        height: 2px;
+        align-self: center;
+        &::after {
+            content: "";
+            display: block;
+            background-color: #fd5a1e;
+            height: 100%;
+            width: 100%;
+            border-radius: 2px;
+            transform: scale(1);
+            transition: all 0.45s cubic-bezier(0, 0.095, 0, 1);
+        }
+    }
+    &.btnWhite {
+        a {
+            span:first-child{
+                color: white;
+            }
+            span:last-child {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+        }
+    }
+    &.btnBlack{
+        a {
+            span:first-child{
+                color: black;
+            }
+            span:last-child {
+                background-color: rgba(16, 16, 16, 0.1);
+            }
+        }
+    }
+}
+
