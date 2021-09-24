@@ -327,6 +327,7 @@
                         display: inline-flex;
                         align-items: flex-start;
                         flex-wrap: nowrap;
+                        transform: translateX(100%);
                         .brand_item {
                             margin-right: 80px;
                             img {
@@ -429,6 +430,9 @@
             .footer_btn,.footer_btn1,.footer_btn2{
                 @include button(32px)
             }
+        }
+        .section_skew{
+            transform: skewY(0.5deg);
         }
     }
 }

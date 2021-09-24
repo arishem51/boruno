@@ -2,10 +2,23 @@ function App() {
     const query = (params) => document.querySelector(params)
     const menuClick = () => {
         let header__content = document.getElementsByClassName('header__content')
+        let btnWrapper = document.querySelectorAll('.menu_btnWrapper');
         let a = header__content[0];
         a.addEventListener('click', () => {
             a.classList.toggle('text-active')
             query('.menu').classList.toggle('isActive')
+            if(query('.menu').classList.contains('isActive')){
+                setTimeout(()=>{
+                    btnWrapper.forEach(item =>{
+                        item.style.overflow = 'inherit'
+                    })
+                },1500)
+            }else{
+                btnWrapper.forEach(item =>{
+                    item.style.overflow = 'hidden'
+                })
+               
+            }
         })
     }
     const scrollPage = () => {
@@ -19,16 +32,22 @@ function App() {
         let fTransformY = -300;
         let sTrnaformX = 170;
         let sTransformY = -200;
+        let brandTransformY = 6600;
         let scaleXY = 2;
         let scrollY = 1700;
         let creaBtn = query('.creativity_btn');
         let footerBtn = query('.footer_btn');
         let footerBtn1 = query('.footer_btn1');
         let footerBtn2 = query('.footer_btn2');
-
+        let brand_container = query('.brand_container')
         const scrollbar = Scrollbar.init(document.querySelector('.scroller'));
         scrollbar.addListener((status) => {
+
             const { limit, offset } = status
+            //6600 => 0%
+            Object.assign(brand_container.style,{
+                transform : `translateX(${100 - (offset['y']/6600 * 100)}%)`
+            })
             if (offset['y'] <= 1700) {
                 //scroll container title
                 Object.assign(scrollTitle.style, {
@@ -93,8 +112,6 @@ function App() {
                 footerBtn1.classList.add('btnBlack');
                 footerBtn2.classList.add('btnBlack');
             }
-
-
         })
     }
 
