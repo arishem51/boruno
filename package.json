@@ -1,0 +1,24 @@
+{
+  "name": "brunoclone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "gh-pages": "^3.2.3",
+    "smooth-scrollbar": "^8.6.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arishem51/boruno.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arishem51/boruno/issues"
+  },
+  "homepage": "https://github.com/arishem51/boruno#readme"
+}
