@@ -1,4 +1,4 @@
-
+import Scrollbar from 'smooth-scrollbar';
 function App() {
     const query = (params) => document.querySelector(params)
     const menuClick = () => {
